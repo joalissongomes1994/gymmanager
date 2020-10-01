@@ -1,0 +1,313 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
+:root {
+  --primary-color: #7159c1;
+  --secondary-color: #f7df1e;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+body {
+  background-color: var(--primary-color);
+  font-family: "Roboto", sans-serif;
+}
+
+header {
+  background-color: white;
+  width: 100%;
+  padding: 32px;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.links {
+  font-size: 22px;
+}
+
+.links a + a {
+  margin-left: 32px;
+}
+.links a {
+  text-decoration: none;
+  color: #777;
+  position: relative;
+}
+
+.links a.active {
+  font-weight: bold;
+  color: var(--primary-color);
+}
+
+.links a::after {
+  content: "";
+  width: 0;
+  height: 2px;
+  background-color: var(--primary-color);
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+}
+
+.links a:hover::after {
+  width: 100%;
+  transition: width 200ms ease-in-out;
+}
+
+/* === CARD === */
+.card {
+  background-color: white;
+  width: 800px;
+  min-height: 400px;
+  border-radius: 4px;
+
+  margin: 45px auto;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  box-shadow: 0px 2px 6px -2px rgba(0, 0, 0, 0.8);
+
+  animation: up 1s ease-out;
+}
+
+/* === ANIMATION ===*/
+@keyframes up {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+/* === DETAILS === */
+.details {
+  padding: 32px;
+}
+
+.details .item {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 16px 0;
+}
+
+.details .field-services {
+  text-align: center;
+}
+
+/* Estilizando o último Elemento*/
+.details .item:last-child {
+  border: none;
+}
+
+/* Estilizando o Elemento que eu definir no parâmetro*/
+.details h3,
+.details .item div:nth-child(1) {
+  font-size: 14px;
+  line-height: 24px;
+  color: #777;
+  letter-spacing: 0.7px;
+  font-weight: normal;
+}
+
+.details .item div:nth-child(2) {
+  color: #555;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.details h3 {
+  text-transform: uppercase;
+  font-weight: bold;
+  color: var(--primary-color);
+  text-align: center;
+}
+
+.details .item span {
+  padding: 8px 16px;
+  background-color: var(--secondary-color);
+  border-radius: 16px;
+  color: #777;
+  display: inline-block;
+  margin: 8px 4px 0 0;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+
+/* === FORM === */
+input,
+select {
+  width: 100%;
+  outline: none;
+  color: #555;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+input[type="radio"] {
+  width: initial;
+  margin-right: 4px;
+}
+
+input::placeholder {
+  font-size: 16px;
+  font-weight: normal;
+}
+
+button[type="submit"],
+a.button {
+  padding: 8px 32px;
+  background-color: var(--primary-color);
+  color: white;
+  width: 100%;
+  font-size: 16px;
+  border-radius: 4px;
+  margin-top: 32px;
+  cursor: pointer;
+}
+
+a.button {
+  display: block;
+  box-sizing: border-box;
+  text-align: center;
+  text-decoration: none;
+}
+
+#form-delete button[type="submit"] {
+  margin-top: 8px;
+  background-color: lightcoral;
+}
+
+/* === Estilizando Index Instructor ===*/
+.table-container {
+  display: block;
+  padding: 40px;
+  /*Box-sinzing respeita a o limite definido no padding*/
+  box-sizing: border-box;
+}
+
+.table-container table {
+  border-spacing: 0;
+}
+
+.table-container thead {
+  text-align: left;
+}
+
+.table-container thead tr th:last-child,
+td:last-child {
+  text-align: center;
+}
+
+td,
+th {
+  padding: 16px;
+  border-bottom: 1px solid #d9d9d9;
+}
+
+th {
+  text-transform: uppercase;
+  color: #777;
+  font-size: 14px;
+}
+
+tbody tr:last-child td {
+  border-bottom: none;
+}
+
+tbody tr td:first-child {
+  display: grid;
+  grid-template-columns: 64px 1fr;
+  align-items: center;
+}
+
+tbody tr td:first-child span {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-position: center;
+  background-size: cover;
+  box-shadow: 3px 1px 6px -3px black;
+  border: 2px solid white;
+}
+
+tbody tr td:last-child a,
+.table-container > a {
+  background-color: var(--primary-color);
+  color: white;
+  text-decoration: none;
+  padding: 8px 16px;
+  text-transform: uppercase;
+  border-radius: 8px;
+  border: 1px solid white;
+  font-size: 12px;
+}
+
+.table-container > a {
+  margin-bottom: 16px;
+  display: inline-block;
+}
+
+/* === FILTERS ===*/
+.table-container .header {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  margin-bottom: 32px;
+}
+
+.table-container .header a {
+  margin: 0;
+  width: 120px;
+}
+
+.table-container .header form {
+  display: grid;
+  grid-template-columns: 1fr 120px;
+  align-items: center;
+  grid-gap: 8px;
+}
+
+.table-container .header form input {
+  border: 1px solid #eee;
+  padding: 4px 8px;
+  box-sizing: border-box;
+}
+
+.table-container .header form button {
+  margin: 0;
+}
+
+/* === PAGINAÇÃO === */
+.table-container {
+  display: grid;
+  grid-template: 64px 1fr / 1fr;
+}
+
+.table-container .header {
+  margin: 0;
+  align-self: start;
+}
+
+.table-container .pagination {
+  margin: 0;
+  align-self: end;
+  justify-self: center;
+}
+
+.pagination a,
+.table-container span {
+  color: var(--primary-color);
+  text-decoration: none;
+  margin-right: 16px;
+}
+
+.pagination a:hover {
+  filter: brightness(0.4);
+  border-bottom: 1px solid var(--primary-color);
+}
